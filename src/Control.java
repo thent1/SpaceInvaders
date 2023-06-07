@@ -16,6 +16,6 @@ public class Control extends KeyAdapter {
     @Override
     public void keyReleased(KeyEvent e) {
         super.keyReleased(e);
-        player.keyPressed(e);
+        player.keyReleased(e);
     }
 }
