@@ -25,6 +25,5 @@ public class Background {
                 imgY2 = img.getHeight(null)*-1;
             }
         }
-
     }
 }

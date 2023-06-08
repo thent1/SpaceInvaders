@@ -7,6 +7,7 @@ public class PlayerProjectile {
     int imgX;
     int imgY;
     int speed = 6;
+    int damage = 8;
 
     public PlayerProjectile(int imgX, int imgY) {
         this.imgX = imgX;
@@ -19,5 +20,9 @@ public class PlayerProjectile {
 
     public void paint(Graphics graphics) {
             graphics.drawImage(img, imgX, imgY, imgWidth, imgHeight, null);
+    }
+    public Rectangle getRectangle() {
+        Rectangle rectangle = new Rectangle(imgX, imgY, imgWidth, imgHeight);
+        return rectangle;
     }
 }
