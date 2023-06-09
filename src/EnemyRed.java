@@ -3,30 +3,31 @@ import java.awt.*;
 
 public class EnemyRed extends Enemy {
     private int dirY = 0;
+
     public EnemyRed(int x, int y) {
         img = new ImageIcon("res/redSpaceship.png").getImage();
         imgX = x;
         imgY = y;
         imgWidth = img.getWidth(null);
         imgHeight = img.getHeight(null);
-        range = random.nextInt(100)+50;
+        range = random.nextInt(100) + 50;
         xLeft = imgX - range;
         if (xLeft < 0) {
             xLeft = 0;
         }
         xRight = imgX + range;
-        if (xRight > Main.WIDTH-imgWidth) {
-            xRight = Main.WIDTH-imgWidth;
+        if (xRight > Main.WIDTH - imgWidth) {
+            xRight = Main.WIDTH - imgWidth;
         }
     }
 
     @Override
     public void update() {
-        if (random.nextInt(1000)==0) {
+        if (random.nextInt(1000) == 0) {
             dirY = random.nextInt(2);
         }
         super.update();
-        if (canMove == true) {
+        if (canMove) {
             if (route) {
                 imgX += speed;
             } else {
@@ -52,14 +53,15 @@ public class EnemyRed extends Enemy {
                 }
             }
         } else {
-            if ((System.currentTimeMillis()-time)>timeStop) {
+            if ((System.currentTimeMillis() - time) > timeStop) {
                 canMove = true;
             }
         }
     }
+
     @Override
     public Rectangle getRectangle() {
-        Rectangle rectangle = new Rectangle(imgX+15, imgY+12, imgWidth-35, imgHeight-24);
+        Rectangle rectangle = new Rectangle(imgX + 15, imgY + 12, imgWidth - 35, imgHeight - 24);
         return rectangle;
     }
 }

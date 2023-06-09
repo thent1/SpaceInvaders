@@ -8,21 +8,21 @@ public class EnemyBlue extends Enemy {
         imgY = y;
         imgWidth = img.getWidth(null);
         imgHeight = img.getHeight(null);
-        range = random.nextInt(100)+50;
+        range = random.nextInt(100) + 50;
         xLeft = imgX - range;
         if (xLeft < 0) {
             xLeft = 0;
         }
         xRight = imgX + range;
-        if (xRight > Main.WIDTH-imgWidth) {
-            xRight = Main.WIDTH-imgWidth;
+        if (xRight > Main.WIDTH - imgWidth) {
+            xRight = Main.WIDTH - imgWidth;
         }
     }
 
     @Override
     public void update() {
         super.update();
-        if (canMove == true) {
+        if (canMove) {
             if (route) {
                 imgX += speed;
             } else {
@@ -34,7 +34,7 @@ public class EnemyBlue extends Enemy {
                 time = System.currentTimeMillis();
             }
         } else {
-            if ((System.currentTimeMillis()-time)>timeStop) {
+            if ((System.currentTimeMillis() - time) > timeStop) {
                 canMove = true;
             }
         }
@@ -42,7 +42,7 @@ public class EnemyBlue extends Enemy {
 
     @Override
     public Rectangle getRectangle() {
-        Rectangle rectangle = new Rectangle(imgX+10, imgY-+5, imgWidth-20, imgHeight-20);
+        Rectangle rectangle = new Rectangle(imgX + 10, imgY - +5, imgWidth - 20, imgHeight - 20);
         return rectangle;
     }
 }

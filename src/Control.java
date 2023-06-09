@@ -7,6 +7,7 @@ public class Control extends KeyAdapter {
     public Control(Player player) {
         this.player = player;
     }
+
     @Override
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);

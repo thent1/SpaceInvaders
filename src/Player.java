@@ -13,9 +13,9 @@ public class Player {
     int shotDelay = 400;
     long lastShot = 0;
     boolean isShooting = false;
+
     public void paint(Graphics graphics) {
         graphics.drawImage(img, imgX, imgY, imgWidth, imgHeight, null);
-
     }
 
     public void update() {
@@ -27,10 +27,11 @@ public class Player {
         if (imgX >= 830) {
             imgX = 830;
         }
-        if ((System.currentTimeMillis()-lastShot)>shotDelay) {
+        if ((System.currentTimeMillis() - lastShot) > shotDelay) {
             isShooting = true;
         }
     }
+
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_D) {
@@ -39,8 +40,8 @@ public class Player {
         if (key == KeyEvent.VK_A) {
             move = -speed;
         }
-        if(key == KeyEvent.VK_SPACE) {
-            if(isShooting == true) {
+        if (key == KeyEvent.VK_SPACE) {
+            if (isShooting) {
                 Space.playerProjectiles.add(new PlayerProjectile(imgX + 64, imgY - 50));
                 isShooting = false;
                 lastShot = System.currentTimeMillis();

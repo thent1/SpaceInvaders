@@ -2,9 +2,9 @@ import javax.swing.*;
 
 public class Main {
 
-     private static JFrame jFrame;
-     public static final int WIDTH = 1000;
-     private static final int HEIGHT = 1000;
+    public static final int WIDTH = 1000;
+    private static final int HEIGHT = 1000;
+    private static JFrame jFrame;
 
     public static void main(String[] args) {
         jFrame = new JFrame("Space Invaders");

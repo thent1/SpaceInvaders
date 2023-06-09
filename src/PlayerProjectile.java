@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+
 public class PlayerProjectile {
     Image img = new ImageIcon("res/playershot.png").getImage();
     int imgWidth = img.getWidth(null);
@@ -19,8 +20,9 @@ public class PlayerProjectile {
     }
 
     public void paint(Graphics graphics) {
-            graphics.drawImage(img, imgX, imgY, imgWidth, imgHeight, null);
+        graphics.drawImage(img, imgX, imgY, imgWidth, imgHeight, null);
     }
+
     public Rectangle getRectangle() {
         Rectangle rectangle = new Rectangle(imgX, imgY, imgWidth, imgHeight);
         return rectangle;
